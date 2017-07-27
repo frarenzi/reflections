@@ -1,25 +1,46 @@
+Francesca's Version Control Lesson 2 Reflections
+
 1) What happens when you initialize a repository? Why do you need to do it?
+
 Git create a .git folder where the history of the tracked files are recorded
 And git create a branch master.
-I need git init to start to use git with that project, to check the status
-git status
+'git init' to start to use git with that project, 'git status' to check the status
 
 2) How is the staging area different from the working directory and the repository?
 What value do you think it offers?
+
 the staging area is a bridge between the working directory and the repository, and 
 it allows to add together for the commit files which are logically connected.
 
-How can you use the staging area to make sure you have one commit per logical
+3) How can you use the staging area to make sure you have one commit per logical
 change?
 
-What are some situations when branches would be helpful in keeping your history
+thanks to the command 'git diff' without arguments and 'git diff --staged' you can compare
+the working directory with the staging area and the staging area with the most recent commit, respectively. 
+This allow you to know which modifications you have not commited yet.
+
+4) What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
-How do the diagrams help you visualize the branch structure?
+When I want to exp or doing some modification keeping independent the master version. 
+Development branches and production, shareable master version.
 
-What is the result of merging two branches together? Why do we represent it in
+5) How do the diagrams help you visualize the branch structure?
+
+You have an idea of the progress of the projects and at which point you may go back and where 
+merging. Very important: if after git checkout commitID you make modifications, these are 
+not reachable unless you create a new branch git checkout -b new_branch_name
+
+6) What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
-What are the pros and cons of Git's automatic merging vs. always doing merges
+You have from two branches one branch with the commits from boths ordered by timestamp
+
+7) What are the pros and cons of Git's automatic merging vs. always doing merges
 manually?
+
+pros: automatic merging (am) is fast and easy,
+      manually merging (mm) is accurate (at the end you have what you want)
+cons: am can create non-sense code or conflicts,
+      mm is slow and not easy, since you might understand the other code
 
