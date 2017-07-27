@@ -4,7 +4,6 @@ Francesca's Version Control Lesson 1 Reflections
 
 It was helpful because the bug was only in one of the versions, and diff select only the modified rows
 
-
 2) How could having easy access to the entire history of a file make you a more
 efficient programmer in the long term?
 
@@ -15,9 +14,8 @@ commit, like you do in Git, vs having versions automatically saved, like Google
 docs does?
 
 pros: you can create commit that are at the logical point of the coding
-(in one hour you migh do three commits, the hour next just one)
-
-cons: doing manually requires commitment and when the commit is depends on the developer
+(in one hour you migh do three commits, the next hour just one)
+cons: doing manually requires commitment and when creating the commit depends on the developer
 
 4) Why do you think some version control systems, like Git, allow saving multiple
 files in one commit, while others, like Google Docs, treat each file separately?
@@ -35,68 +33,9 @@ and which modifications are performed
 could break something?
 
 you can easy checkout the previous version and understand when the mistakes have been maden.
-git checkout commitID -> to make the commitID the version to run
+
 
 7) Now that you have your workspace set up, what do you want to try using Git for?
 
 For my projects, to get used to git before the London school
     
-2)prompt command for windows: FC old.txt new.txt
-prompt command for mac or windows: diff -u old.txt new.txt
-
-each commit should have one clear, logical purpose, and you should never do too much work without committing
-sudo apt-get install git
- https://git-scm.com/downloads
-git clone https://github.com/udacity/asteroids.git
-Quiz: Cloning and Exploring The Repo
-Cloning a Repository
-
-To clone a repository, run git clone followed by a space and the repository URL.
-Asteroids URL
-
-Use the following url to clone the Asteroids repository: https://github.com/udacity/asteroids.git
-Exiting git log
-
-To stop viewing git log output, press q (which stands for quit).
-Getting Colored Output
-
-To get colored diff output, run git config --global color.ui auto
-Copying and Pasting from the Command Line
-
-To complete this quiz, you'll want to copy and paste some commit ids.
-
-Windows
-To copy and paste within Git Bash, follow the instructions on this page.
-
-Mac
-To copy and paste within the terminal on Mac, use Cmd+C and Cmd+V
-
-Ubuntu
-To copy and paste within the terminal on Ubuntu, use Ctrl+Shift+C and Ctrl+Shift+V.
-Using git log and git diff
-
-As a reminder, running git log will show a list of the recent commits with information about them, including commit IDs. Running git diff followed by two commit IDs will compare the two versions of the code in those commits. If you need a refresher, you may want to rewatch this video.
-Entering commit IDs
-
-If it is easier, you may enter the first four or more characters of the commit ID rather than pasting the entire ID.
-
-Git command review
-
-Compare two commits, printing each line that is present in one commit but not the other.
-
-git diff will do this. It takes two arguments - the two commit ids to compare.
-In order for the changes adding the mute button to be shown as additions, the commit with the mute button needs to be the second argument to git diff. That is because git diff considers the first argument as the "original", and the second argument as the "new" version, so additions are lines present in the second argument but not the first. 
-
-Make a copy of an entire Git repository, including the history, onto your own computer.
-
-git clone will do this. It takes one argument - the url of the repository to copy.
-
-Temporarily reset all files in a directory to their state at the time of a specific commit.
-
-git checkout will do this. It takes one argument - the commit ID to restore.
-
-Show the commits made in this repository, starting with the most recent.
-
-git log will do this. It doesn't take any arguments.
-
-
