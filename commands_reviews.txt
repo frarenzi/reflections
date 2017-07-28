@@ -141,3 +141,32 @@ Retrieve updates (Download object/branches from another repository):
 	remote repoitory.
 	!!-> to do when both the remote repository and the local repository have
 	changes.
+
+See the numbers of commits performed by the different developers, sorted alphabetically
+	git shortlog
+	!!-> git shortlog -s -n to see only the number of commits sorted numerically without commit messages 
+
+See the commits of a specific author
+	git log --author='Francesca Renzi'
+	!!-> git log --author=Francesca gives all commits from authors with 'Francesca' in their names
+
+See the commits with a specific message
+	git log --grep='fix bug'
+
+Change commits:
+	git rebase -i <base>
+	!!-> git rebase -i HEAD~3 interactively rebase the commits to the one that's 3 before the one you're on
+	Inside the interactive list of commits, all commits start out as pick, but you can swap that out with:
+    	p or pick – to keep the commit as is
+    	r or reword – to keep the commit's content but alter the commit message
+    	e or edit – to keep the commit's content but stop before committing so that you can:
+        		add new content or files
+        		remove content or files
+        		alter the content that was going to be committed
+    	s or squash – to combine this commit's changes into the previous commit (the commit above it in the list)
+    	f or fixup – to combine this commit's change into the previous one but drop the commit message
+    	x or exec – to run a shell command
+    	d or drop – to delete the commit
+	create a backup branch before rebasing, if you're happy with the rebase, the backup branch
+	!!-> git push -f origin local because it changes drastically the repository history!
+
