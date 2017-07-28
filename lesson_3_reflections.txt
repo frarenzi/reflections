@@ -19,14 +19,14 @@ use one instead of another?
 What is the benefit of having a copy of the last known state of the remote
 stored locally?
 
-    Fill in your answer here
+    Allow you to pull using fetch + merge in order to not overwrite what you are doing locally
 
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
 
-    Fill in your answer here
+    sending the code version. the coding part would be faster, but the interaction between version would be painfull
 
 When would you want to make changes in a separate branch rather than directly in
 master?  What benefits does each approach have?
 
-    Fill in your answer here
+    when I work with others and when the changes are expected to be important or time-consuming
