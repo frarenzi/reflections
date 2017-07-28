@@ -1,0 +1,25 @@
+To make text bold, surround it with double asterisks:
+	Isn't today a **wonderful** day?
+
+To italicize text, surround it with underscores:
+	And in that moment I thought to myself: _Did I turn off the stove?_
+
+Inline code, you'll surround text in backticks (`, not a single quote):
+	You should use the `strong` tag.
+
+Headings:For h1 through h6 tags, desc in importnace, # before your text.
+The number of #s you include tells Markdown which header tag you're using. For example:
+	## This is an h2.
+	### This is an h3.
+
+List: using * to make a bullet
+	* prima cosa
+	* seconda cosa
+
+Link: to make a link in the word here
+	[here](www.gmail.com)	
+
+Code bock
+	```
+	codice da scrivere
+	```
