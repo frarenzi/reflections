@@ -12,6 +12,7 @@ Start to use git with that project:
 Make a copy of an entire Git repository, including the history, onto your own computer:
 	git clone URLaddress
 	example:git clone https://github.com/udacity/asteroids.git
+	!!-> if you clone from a URL, than the repository will automatically have a remote named origin
 
 Configure color for git:
 	git config --global color.ui auto
@@ -89,14 +90,34 @@ Commit contents of the staging area to the repository:
 	!!->a window is opened to describe the changes performed. Each commit should have one clear,
 	logical purpose, and you should never do too much work without committing.
 
+Change the the wording of the most-recent commit message:
+	git commit --amend	
+
+Add forgotten files to commit:
+	1_ edit the files
+	2_ save the files
+	3_ stage the files
+	4_ git commit --amend
+
+Reverses a given commit and creates a new commit to record the change:
+	git revert commitID
+	!!-> for instance, what was added will be deleted!
+
+Erases commits -should be done in order!)	
+	git reset 
+	!!-> dangerous command, if run for mistake look for git-reflog command
+
 Check the relation between two branches:
-	git log --graph --oneline Branch1Name Branch2Name 
+	git log --graph --oneline Branch1Name Branch2Name
+
+Check the relation between all branches in the repository:
+ 	git log --oneline --graph --decorate --all 
 
 Add a remote named ORIGIN for the repository at URL:
 	git remote add ORIGIN URL
 	example: git remote add origin https://github.com/frarenzi/reflections.git
 
-Show the list of remotes:
+Show the list of remotes with details about the connections:
 	git remote -v
 
 Configure git to not write your crediantial when you talk with gitHub:
@@ -107,10 +128,16 @@ Update remote named origin with the local repository:
 	git push origin LocalName
 	example: git push origin master
 	
-Incorporate changes from a remote repoitory into the current branch, LocalName:
+Retrieve updates and automatically merge updates (Incorporate changes from a remote repoitory into the current branch, LocalName):
 	git pull origin LocalName
 
-Download object/branches from another repository:
+Retrieve updates (Download object/branches from another repository):
 	git fetch origin
 	!!-> running 'git fetch origin' and 'git merge master origin/master' is
-	equivalent of git pull origin master
+	equivalent of git pull origin master. 'git fetch' updates the origin/master to 
+	the version available in the remote repository, but your local master unmoves.
+	For this reason, you do 'git merge', to update your local master to ther origin/master.
+	At the end it is good doing 'git push' to keep the track of the commit on the 
+	remote repoitory.
+	!!-> to do when both the remote repository and the local repository have
+	changes.

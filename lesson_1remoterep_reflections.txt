@@ -1,0 +1,33 @@
+Why Multiple Remotes?
+
+	If you are working with multiple developers then you might want to get changes they're working on in their 		branch(es) into your project before they merge them into the master branch. You might want to do this if 	 you want to test out their change before you decide to implement your changes.
+
+
+Which is the diff between git and gitHub?
+    
+    Git is a version control tool
+    GitHub is a service to host Git projects
+
+
+Describe the differences between forks, clones, and branches.  When would you
+use one instead of another?
+
+    branch is a branch of one single repository, which can be locally or on GitHub server.
+    It is done to develop idea without changing the working version of the code, the master version
+    clone is a copy of a local or remote repository to a local repository
+    fork is a clone of a remote repository to a remote repository
+
+What is the benefit of having a copy of the last known state of the remote
+stored locally?
+
+    Allow you to pull using fetch + merge in order to not overwrite what you are doing locally
+
+How would you collaborate without using Git or GitHub?  What would be easier,
+and what would be harder?
+
+    sending the code version. the coding part would be faster, but the interaction between version would be painfull
+
+When would you want to make changes in a separate branch rather than directly in
+master?  What benefits does each approach have?
+
+    when I work with others and when the changes are expected to be important or time-consuming
