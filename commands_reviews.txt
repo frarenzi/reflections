@@ -1,81 +1,116 @@
 Francesca's Version Control Command review
 
- git checkout commitID -> to make the commitID the version to run
 
-prompt command for windows: FC old.txt new.txt
-prompt command for mac or windows: diff -u old.txt new.txt
+Install git:
+	sudo apt-get install git
 
-each commit should have one clear, logical purpose, and you should never do too much work without committing
-sudo apt-get install git
- https://git-scm.com/downloads
-git clone https://github.com/udacity/asteroids.git
+	website: https://git-scm.com/downloads
 
+Start to use git with that project:
+	git init
 
-To clone a repository, run git clone followed by a space and the repository URL.
-Asteroids URL
+Make a copy of an entire Git repository, including the history, onto your own computer:
+	git clone URLaddress
+	example:git clone https://github.com/udacity/asteroids.git
 
-Use the following url to clone the Asteroids repository: https://github.com/udacity/asteroids.git
-Exiting git log
+Configure color for git:
+	git config --global color.ui auto
 
-To stop viewing git log output, press q (which stands for quit).
-Getting Colored Output
+Configure user:
+	git config --global user.name "Francesca Renzi"
+	git config --global user.email "frarenzi@gmail.com"
 
-To get colored diff output, run git config --global color.ui auto
-Copying and Pasting from the Command Line
+Configure editor to open for writing the commits:
+	git config --global --unset-all core.editor
+	git config --global core.editor "gvim -f"
 
-To complete this quiz, you'll want to copy and paste some commit ids.
+Check the status:
+	git status
 
-Windows
-To copy and paste within Git Bash, follow the instructions on this page.
+Show the commits made in this repository, starting with the most recent:
+	git log
+	Nb: To stop viewing git log output, press q (which stands for quit)
 
-Mac
-To copy and paste within the terminal on Mac, use Cmd+C and Cmd+V
+Show the last commit:
+	git log -n 1
+	
+Temporarily reset all files in a directory to their state at the time of a specific commit:
+	git checkout commitID 
 
-Ubuntu
-To copy and paste within the terminal on Ubuntu, use Ctrl+Shift+C and Ctrl+Shift+V.
-Using git log and git diff
+Difference between two files in Windows (prompt command):
+	FC old.txt new.txt
 
-As a reminder, running git log will show a list of the recent commits with information about them, including commit IDs. Running git diff followed by two commit IDs will compare the two versions of the code in those commits. If you need a refresher, you may want to rewatch this video.
-Entering commit IDs
+Difference between two files in Mac or Linux (prompt command):
+	diff -u old.txt new.txt
 
-If it is easier, you may enter the first four or more characters of the commit ID rather than pasting the entire ID.
+Compare two commits in the repository:
+	git diff ID1old ID2new 
 
-Git command review
+Compare the working directory and the staging area:
+	git diff
 
-Compare two commits, printing each line that is present in one commit but not the other.
+Compare the staging area and the repository directory:
+	git diff --staged 
 
-git diff will do this. It takes two arguments - the two commit ids to compare.
-In order for the changes adding the mute button to be shown as additions, the commit with the mute button needs to be the second argument to git diff. That is because git diff considers the first argument as the "original", and the second argument as the "new" version, so additions are lines present in the second argument but not the first. 
+Discard any changes either in the working directory or the stage area
+(You can't be back, you lost your work because you have not commit yet):
+	git reset --hard
 
-git diff ID1 ID2: compare two commits in the repository
-git diff: compare the working directory and the staging area
-git diff --staged: compare the staging area and the repository directory
-git reset --hard:discard any changes either in the working directory or the stage area, you can't be bcak, you lost your work because you have not commit yet.
-Make a copy of an entire Git repository, including the history, onto your own computer.
+See the branches (the one with the star is where you are working):
+	git branch
 
-git clone will do this. It takes one argument - the url of the repository to copy.
+Create the new branch called NAME:
+	git branch NAME
 
-Temporarily reset all files in a directory to their state at the time of a specific commit.
+Move to work in the branch NAME:
+	git checkout NAME
+ 	!!-> if after git checkout commitID you make modifications, these are 
+	not reachable unless you create a new branch git checkout -b new_branch_name
 
-git checkout will do this. It takes one argument - the commit ID to restore.
+Compare a commit to its parent:
+	git show commitID
 
-Show the commits made in this repository, starting with the most recent.
+Merge two branches:
+	git merge branch_name_1 branch_name2
+	!!->the branch where you are checkout when you merging is merged as well
 
-git log will do this. It doesn't take any arguments.
+Abort the current conflict resolution process:
+	git merge --abort
+	!!->not always possible to reconstruct the pre-merge state
 
-'git init' to start to use git with that project, 'git status' to check the status
+Delete branch:
+	git branch -d branch_name_1
 
-NB: git branch: to see the branches, the one with the star is where are you working
-git branch NAME: create the new branch called NAME
-git checkout NAME: move to work in the branch NAME
+Add a file to a staging area:
+	git add FileName
 
+Commit contents of the staging area to the repository:
+	git commit
+	!!->a window is opened to describe the changes performed. Each commit should have one clear,
+	logical purpose, and you should never do too much work without committing.
 
- Very important: if after git checkout commitID you make modifications, these are 
-not reachable unless you create a new branch git checkout -b new_branch_name
+Check the relation between two branches:
+	git log --graph --oneline Branch1Name Branch2Name 
 
-NB: git log --graph --oneline master coins
+Add a remote named ORIGIN for the repository at URL:
+	git remote add ORIGIN URL
+	example: git remote add origin https://github.com/frarenzi/reflections.git
 
-NB: git merge branch_name_1 branch_name2
-the branch were you are checkout when you merging is merged as well
-git merge --abort
-git show commitID to compare a commit to its parent
+Show the list of remotes:
+	git remote -v
+
+Configure git to not write your crediantial when you talk with gitHub:
+	git config --global credential.helper cache
+	git config --global credential.helper 'cache --timeout=3600'
+
+Update remote named origin with the local repository: 
+	git push origin LocalName
+	example: git push origin master
+	
+Incorporate changes from a remote repoitory into the current branch, LocalName:
+	git pull origin LocalName
+
+Download object/branches from another repository:
+	git fetch origin
+	!!-> running 'git fetch origin' and 'git merge master origin/master' is
+	equivalent of git pull origin master
