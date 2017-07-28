@@ -1,0 +1,63 @@
+Why Multiple Remotes?
+
+	If you are working with multiple developers then you might want to get changes they're working on in their 		branch(es) into your project before they merge them into the master branch. You might want to do this if 	 you want to test out their change before you decide to implement your changes.
+
+
+Which is the diff between git and gitHub?
+    
+    	Git is a version control tool
+    	GitHub is a service to host Git projects
+
+Why do you need to fork a repository?
+	Fork means split in an identical copy. It is a GitHub command. If you fork a repository you make a copy of 
+	that repository and you bocome the owner of that.
+	Different from "cloning": you clone a repository on your local machine. You fork a repository and you have 		this new copy remotivelly.
+
+How can you review another developer's changes?
+	Using git shortlog or git log --grep="wordtosearch" or git log --author='authortosearch'
+
+How can you know what changes to make?
+	1_ Look at the contributing.md
+	2_ Checkout the project issues to see if there is anything you wish to contribute.
+	3a_ If there is, then subscribe to that issue and read the existing conversation.
+	3b_ If there is	not, create a new issue!
+	4_ Create a branch with a descriptive name
+	5_ Make frequent smaller commits with clear messages
+	6_ Update the readme file if necessary
+
+How can you write a readme file in gitHub?
+	markdown file.md
+
+How do you create a pull request?
+	A pull request is a request to the original or source repository's maintainer to include changes in their 		project that you made in your fork of their project.
+    	1_ You must fork the source repository
+    	2_ Clone your fork down to your machine
+    	3_ Make some commits (ideally on a topic branch!)
+    	4_ Push the commits back to your fork
+    	5_ Create a new pull request and choose the branch that has your new commits
+
+
+How can you stay synchronize with the source project?
+	To get commits from a source repository into your forked repository on GitHub you need to:
+	1_ get the cloneable URL of the source repository
+    	2_ create a new remote with the git remote add command
+        	_ use the shortname upstream to point to the source repository
+        	_ provide the URL of the source repository
+		_ git remote add upstream https://github.com/udacity/course-collaboration-travel-plans
+    	3_ fetch the new upstream remote
+		_ git fetch upstream master
+    	4_ merge the upstream's branch into a local branch
+		_ git merge upstream/master
+    	5_push the newly updated local branch to your origin repo
+		_ git push origin master
+
+How can you manage an active pull request?
+ 	By communication!
+	If the project's maintainer is requesting changes to the pull request, then:
+	    1_ make any necessary commits on the same branch in your local repository
+		that your pull request is based on
+    	    2_ push the branch to the your fork of the source repository
+	The commits will then show up on the pull request page.
+
+How can you squash commits?
+
