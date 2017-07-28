@@ -1,53 +1,15 @@
 Francesca's Version Control Command review
 
-1) How did viewing a diff between two versions of a file help you spot the bug that was introduced?
+ git checkout commitID -> to make the commitID the version to run
 
-It was helpful because the bug was only in one of the versions, and diff select only the modified rows
-
-2) How could having easy access to the entire history of a file make you a more
-efficient programmer in the long term?
-
-You might decide that your modifications do not improve your code, so you might start from a old version
-
-3) What do you think are the pros and cons of manually choosing when to create a
-commit, like you do in Git, vs having versions automatically saved, like Google
-docs does?
-
-pros: you can create commit that are at the logical point of the coding
-(in one hour you migh do three commits, the next hour just one)
-cons: doing manually requires commitment and when creating the commit depends on the developer
-
-4) Why do you think some version control systems, like Git, allow saving multiple
-files in one commit, while others, like Google Docs, treat each file separately?
-
-Because Git was created with coding in mind, when you develop a coding project often more 
-files are linked together.
-
-5) How can you use the commands git log and git diff to view the history of files?
-
-'git log' gives the overview of the all commits created, their ID and description. 
-with 'git diff' you can compare two commit to see how many rows are deleted or created
-and which modifications are performed
-
-6) How might using version control make you more confident to make changes that
-could break something?
-
-you can easy checkout the previous version and understand when the mistakes have been maden.
-NB: git checkout commitID -> to make the commitID the version to run
-
-7) Now that you have your workspace set up, what do you want to try using Git for?
-
-For my projects, to get used to git before the London school
-    
-2)prompt command for windows: FC old.txt new.txt
+prompt command for windows: FC old.txt new.txt
 prompt command for mac or windows: diff -u old.txt new.txt
 
 each commit should have one clear, logical purpose, and you should never do too much work without committing
 sudo apt-get install git
  https://git-scm.com/downloads
 git clone https://github.com/udacity/asteroids.git
-Quiz: Cloning and Exploring The Repo
-Cloning a Repository
+
 
 To clone a repository, run git clone followed by a space and the repository URL.
 Asteroids URL
